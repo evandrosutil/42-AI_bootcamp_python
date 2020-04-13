@@ -45,10 +45,11 @@ defusedxml==0.5.0
 distlib==0.3.0
 distributed==1.25.1
 docutils==0.14
-entrypoints==0.2.3
+entrypoints==0.3
 et-xmlfile==1.0.1
 fastcache==1.0.2
 filelock==3.0.10
+flake8==3.7.9
 Flask==1.0.2
 Flask-Cors==3.0.7
 future==0.17.1
@@ -133,12 +134,12 @@ prompt-toolkit==2.0.7
 psutil==5.4.8
 ptyprocess==0.6.0
 py==1.7.0
-pycodestyle==2.4.0
+pycodestyle==2.5.0
 pycosat==0.6.3
 pycparser==2.19
 pycrypto==2.6.1
 pycurl==7.43.0.2
-pyflakes==2.0.0
+pyflakes==2.1.1
 Pygments==2.3.1
 pylint==2.2.2
 pyodbc==4.0.25
