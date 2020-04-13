@@ -4,6 +4,8 @@ if len(sys.argv) > 2:
     print('ERROR')
     exit()
 
+if len(sys.argv) < 2:
+    exit()
 try:
     number = int(sys.argv[1])
 except ValueError:

@@ -2,6 +2,11 @@ import string
 
 
 def text_analyzer(text=None):
+    """
+    This function counts the number of upper characters, lower characters,
+    punctuation and spaces in a given text.
+    """
+
     if not text:
         text = input("What is the text to analyse?\n")
     result = dict()
