@@ -51,8 +51,14 @@ USER_MSG = (
     "5: Quit")
 
 print(USER_MSG)
+first_time = True
 while True:
+    if not first_time:
+        choice = input('Do you want to see the options again? [y/n]\n')
+        if choice[0].lower() == 'y':
+            print(USER_MSG)
     user_input = input()
+    first_time = False
     if not user_input.isdigit() or int(user_input) not in range(1, 6):
         print(
             'This option does not exist, please type the correspoing number.')
@@ -93,7 +99,10 @@ while True:
     elif user_input == '3':
         recipe_to_print = input(
             "Please enter the recipe's name to get its details:\n")
-        print_recipe(recipe_to_print)
+        if recipe_to_print in cookbook.keys():
+            print_recipe(recipe_to_print)
+        else:
+            print('This recipe is not in the cookbook')
         continue
     elif user_input == '4':
         print_recipe_names()
