@@ -13,6 +13,7 @@ try:
     length = int(sys.argv[2])
 except ValueError:
     print('ERROR')
+    exit()
 
 result = [
     word.strip(string.punctuation)
