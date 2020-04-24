@@ -68,3 +68,6 @@ class TestBookAndRecipe(unittest.TestCase):
         self.assertIsInstance(book_starters, list)
         self.assertEqual(len(book_starters), 1)
         self.assertEqual(book_starters[0], recipe.name)
+
+if __name__ == "__main__":
+    unittest.main()
