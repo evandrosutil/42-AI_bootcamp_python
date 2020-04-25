@@ -8,7 +8,7 @@ class Book():
     def __init__(self, name):
         self.name = name
         self.last_update = datetime.datetime.now().strftime('%d/%m/%Y %H:%M')
-        self.creation_date = datetime.date.today().strftime("%d/%m/%Y")
+        self.creation_date = datetime.datetime.now().strftime('%d/%m/%Y %H:%M')
         self.recipes_list = {
                 'starter': list(),
                 'lunch': list(),
