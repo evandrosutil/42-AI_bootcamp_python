@@ -69,5 +69,20 @@ class TestBookAndRecipe(unittest.TestCase):
         self.assertEqual(len(book_starters), 1)
         self.assertEqual(book_starters[0], recipe.name)
 
+    def test_invalid_recipes(self):
+        book = Book('test book')
+        with self.assertRaises(TypeError):
+            Recipe(123, 1, 10, ['lettuce'], 'starter', 'description')
+            Recipe('salad', '1', 10, ['lettuce'], 'starter', 'description')
+            Recipe('salad', 1, '10', ['letuce'], 'starter')
+            Recipe('salad', 1, 10, 'lettuce, tomatoes', 'starter')
+            Recipe('salad', 1, 10, ['lettuce'], 123)
+            Recipe('salad', 1, 10, ['lettuce'], 'starter', 123)
+        with self.assertRaises(ValueError):
+            # cooking level should be between 1 and 5
+            Recipe('salad', 6, 10, ['lettuce'], 'starter', 'description')
+            # recipe type should be 'starter', 'lunch' or 'dessert'
+            Recipe('salad', 3, 10, ['lettuce'], 'dinner', 'description')
+
 if __name__ == "__main__":
     unittest.main()
