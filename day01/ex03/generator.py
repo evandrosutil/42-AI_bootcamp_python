@@ -1,4 +1,27 @@
-from random import shuffle
+import time
+
+
+def shuffle_list(list_obj):
+    '''
+    Essa função embaralhar uma lista passada usando time.process_time para
+    aleatoriezar o processo.
+
+    Args:
+        list_obj (list): The list that will be shuffled.
+
+    Returns:
+        list: The shuffled list.
+    '''
+
+    list_len = len(list_obj) - 1
+    while list_len >= 1:
+        list_len = list_len - 1
+        idx = int(str(time.process_time()).split('.')[-1][-1])
+        if list_len == idx:
+            continue
+        if idx > len(list_obj) - 1:
+            idx = int(idx / 2)
+        list_obj[idx], list_obj[list_len] = list_obj[list_len], list_obj[idx]
 
 
 def generator(text, sep=" ", option=None):
@@ -22,7 +45,7 @@ def generator(text, sep=" ", option=None):
         return None
     text = text.split(sep)
     if option == 'shuffle':
-        shuffle(text)
+        shuffle_list(text)
     elif option == 'ordered':
         text.sort()
     elif option == 'unique':
